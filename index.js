@@ -6,31 +6,10 @@ bot.login(TOKEN);
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
-const mongoose = require("mongoose");
 app.use(bodyParser.json());
 
+app.use('/favicon.ico', express.static('./app/images/favicon032x32.png'));
 
-
-
-// config db 
-const dbConfig = require("./app/config/mongodb.config");
-
-// import model 
-const Alarm = require("./app/models/alarm.model");
-
-mongoose.Promise = global.Promise;
-
-
-// connenct to DB
-mongoose
-    .connect(dbConfig.url, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => {
-        console.log("Connected to MongoDB");
-
-    }).catch((err) => {
-        console.log("could not connect to MongoDB");
-        process.exit();
-    });
 
 // connect to the bot
 bot.on('ready', () => {

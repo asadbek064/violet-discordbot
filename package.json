@@ -6,7 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
-
   },
   "author": "Asadbek Karimov",
   "license": "ISC",
@@ -14,7 +13,6 @@
     "body-parser": "^1.19.0",
     "discord.js": "^11.5.1",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "mongoose": "^5.9.19"
+    "express": "^4.17.1"
   }
 }
