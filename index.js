@@ -29,6 +29,21 @@ bot.on('message', msg => {
             const taggedUsername = taggedUser.username;
 
         }
+    } else if(msg.content.startsWith('!roll')){
+     
+
+            const bodyText = msg.content.split(" ");
+            
+            const rollAmount = bodyText[1];
+    
+            let min =   Number(bodyText[1]);
+               let max  = Number(bodyText[2]);
+
+            
+            const result = (Math.random() * (max - min) + min).toFixed(0);
+            msg.channel.send(result); 
+                     
+        
     } else if (msg.content.startsWith('!timer')) {
 
         let currentTimer = 0;
